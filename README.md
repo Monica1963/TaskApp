@@ -1,3 +1,14 @@
+# Sobre TASKAPP
+Proyecto realizado en el curso de React. Punch IT (https://punchit.com.ar/)
+
+La web permite al usuario cargar y visualizar una lista de tareas, cambiando el estado de las mismas (Pendientes-Finalizadas)
+
+La información se almacenará en el navegador (Local Storage) por lo que estará disponible aún cuando cierre el navegador.
+
+Dará la opción de borrar tareas, luego de confirmar dicha acción.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

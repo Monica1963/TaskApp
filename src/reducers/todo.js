@@ -1,19 +1,22 @@
-import { ADD_WORK, UPDATE_WORK, DELETE_WORK, GET_WORK } from "./actions";
+//import { ADD_WORK, UPDATE_WORK, DELETE_WORK, GET_WORK } from "./actions";
 
-const initialState = tasks[{id: "", description: "", state: false}];
+export const ADD_WORK = "ADD_WORK";
+export const DELETE_WORK = "DELETE_WORK";
+export const UPDATE_WORK = "UPDATE_WORK";
+const GET_WORK = "GET_WORK";//
 
-export function todoReducer (state = initialState, actions) {
-    switch (actions.type) {
+export const initialState =  {id: "", work: "", fecha: new Date(), state: false, };
+
+export function todoReducer (state = [], action) {
+    switch (action.type) {
         case ADD_WORK:
-            
-            return;
+            return [...state, action.payload];
+        
         case DELETE_WORK:
-            
-            return;
+            return action.payload;
 
         case UPDATE_WORK:
-            
-            return;
+            return action.payload;
 
         case GET_WORK:
             

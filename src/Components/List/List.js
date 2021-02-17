@@ -9,7 +9,7 @@ import Item from "./Item";
 
 const List = ({activities, deleteActivity, changeActivity}) => {
 
-    
+    console.log(activities);
     return ( 
         <>
             {activities.length === 0 && <h4>No hay tareas</h4>}
@@ -17,7 +17,6 @@ const List = ({activities, deleteActivity, changeActivity}) => {
             {activities.map((item) => (
                 
                  
-
                     !item.state  &&  <Item key={item.id} {...item} deleteActivity={deleteActivity} changeActivity={changeActivity} />
             ) )}
             

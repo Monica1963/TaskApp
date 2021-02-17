@@ -2,9 +2,13 @@ import { useState } from "react";
 import shortid from "shortid";
 import { Button, Form } from "react-bootstrap";
 import "./Create.css";
+//import { ADD_WORK } from './../../reducers/actions/todo.js';
+
+
+
 
 const Create = ({addActivity}) => {
-    const initialState = {id: "", work: "", state: false};
+    const initialState = {id: "", work: "", fecha: new Date(), state: false, };
 
     const handlerWork = (e) => {
         const {name, value} = e.target;
@@ -25,7 +29,8 @@ const Create = ({addActivity}) => {
         };
         
         setWork(initialState);
-        addActivity(workObject);
+        addActivity(workObject); //se reemplaza por el dispactch
+        
     };    
     
     return ( 

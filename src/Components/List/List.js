@@ -1,4 +1,3 @@
-
 import Item from "./Item";
 
 // const items = [
@@ -7,33 +6,39 @@ import Item from "./Item";
 //     {id: 3, work: "salir", state:false}
 // ];
 
-const List = ({activities, deleteActivity, changeActivity}) => {
+const List = ({ activities, deleteActivity, editActivity, changeActivity }) => {
+  return (
+    <>
+      {activities.length === 0 && <h4>No hay tareas</h4>}
+      <h3 className="text-center">Tareas pendientes</h3>
+      {activities.map(
+        (item) =>
+          !item.state && (
+            <Item
+              key={item.id}
+              {...item}
+              deleteActivity={deleteActivity}
+               editActivity={editActivity}
+              changeActivity={changeActivity}
+            />
+          )
+      )}
 
-    console.log(activities);
-    return ( 
-        <>
-            {activities.length === 0 && <h4>No hay tareas</h4>}
-            <h3 className="text-center">Tareas pendientes</h3>
-            {activities.map((item) => (
-                
-                 
-                    !item.state  &&  <Item key={item.id} {...item} deleteActivity={deleteActivity} changeActivity={changeActivity} />
-            ) )}
-            
-            <h3 className="text-center">Tareas finalizadas</h3>
-            {activities.map((item) => (
-                 
-                    item.state  && <Item key={item.id} {...item} deleteActivity={deleteActivity} changeActivity={changeActivity} />
-                 
-                
-            ))}
-
-       
-
-        </>
-
-
-     );
+      <h3 className="text-center">Tareas finalizadas</h3>
+      {activities.map(
+        (item) =>
+          item.state && (
+            <Item
+              key={item.id}
+              {...item}
+              deleteActivity={deleteActivity}
+              editActivity={editActivity}
+              changeActivity={changeActivity}
+            />
+          )
+      )}
+    </>
+  );
 };
 
 // //Este componente podria ir aparte como Item.js
